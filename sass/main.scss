@@ -1,0 +1,295 @@
+// Colors
+// ### Primary
+
+$dark-violet: hsl(256, 26%, 20%);
+$grayish-blue: hsl(216, 30%, 68%);
+
+// ### Neutral
+
+$very-dark-violet: hsl(270, 9%, 17%);
+$dark-grayish-violet: hsl(273, 4%, 51%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+// Reset
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+// Box-sizing. Making sizing for boxes & pseudo code much easier
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins: helps reintroduce spacing without collapising margins  */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+  text-align: center;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  //min-height reduces issues with scrolling
+  min-height: 100vh;
+  font-family: "Karla", sans-serif;
+}
+
+//Make images easier to work with
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+//Make form elements easier to work with
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+// remove animations for people who have turned them off
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+//UT's
+//Utitlity classes do one thing and do it really well.
+//More modular but less code in the long run
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.column {
+  flex-direction: column;
+}
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding: 0 3em; //inline = left & right only
+  margin-inline: auto; //holds content in the middle of the page
+  max-width: 80rem;
+}
+
+//Screen reader only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+//Standard styles
+ul {
+  list-style: none;
+  line-height: 2;
+  font-weight: bold;
+  padding: 0;
+  font-size: 0.75rem;
+  word-spacing: 1.7;
+}
+h1,
+h2,
+h3 {
+  font-family: "DM Serif Display", serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1;
+  padding: 3.7em 0 0 0;
+}
+
+h2 {
+  color: $very-light-gray;
+  font-size: 2.3rem;
+  line-height: 1;
+  weight: 400;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  text-transform: uppercase;
+  color: $dark-grayish-violet;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a,
+a:active,
+a:hover,
+a:focus {
+  color: $very-dark-violet;
+}
+
+section {
+  padding: 4rem 0;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+// Nav
+.navbar {
+  padding: 1.2rem;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  align-self: center;
+}
+
+.top-h {
+  border-top: 1px solid grey;
+}
+.hamburger {
+  border: none;
+  background-color: white;
+}
+
+.btn {
+  border: $very-light-gray 2px solid;
+  color: $very-light-gray;
+  background-color: transparent;
+  padding: 6px 25px;
+}
+
+.nav-btn {
+  border: $dark-violet 2px solid;
+  width: 90%;
+  margin: 1rem;
+}
+
+.nav__item {
+  color: $very-light-gray;
+}
+
+.nav__list {
+  background-color: $very-dark-violet;
+}
+
+.work__btn {
+  margin: 1rem;
+}
+
+.nav__img {
+  position: absolute;
+}
+// Intro
+.section__intro {
+  background-color: $dark-violet;
+  width: 100%;
+}
+
+.pattern {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.right {
+  position: relative;
+  bottom: 0%;
+  right: 0%;
+}
+
+.intro {
+  padding: 5rem 0.5rem;
+  background-repeat: no-repeat;
+}
+
+.hero__image {
+  position: relative;
+
+  width: 100%;
+}
+
+.intro__text {
+  color: $very-light-gray;
+}
+
+.intro__text p {
+  padding: 0 1.5rem;
+}
+// Benefits
+
+.benefit {
+  flex-direction: column;
+  align-items: center;
+}
+
+.work {
+  background-color: $dark-violet;
+  margin: 0 1.5rem;
+  padding: 4rem 3rem;
+}
+
+.work__image {
+  position: absolute;
+  right: 7%;
+}
+
+//Footer
+
+footer {
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 50px;
+}
+
+.social ul {
+  flex-direction: row;
+}
+
+@media (min-width: 375px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
